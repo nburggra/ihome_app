@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Product page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Product page</h1>
+        </div>
+    </div>
+    <div class="container">
+        <button>Toevoegen</button>
+    </div>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th style="border-style:none"></th>
+            </tr>
+            </thead>
+            <th:block th:each="product : ${ProductList}">
+                <tr>
+                    <td th:text="${product.productId}">...</td>
+                    <td th:text="${product.productName}">...</td>
+                    <td th:text="${product.productCategory}">...</td>
+                    <td th:text="${product.productPrice}">...</td>
+                    <td><span class="glyphicon glyphicon-remove"></span></td>
+                </tr>
+            </th:block>
+        </table>
+    </div>
+</body>
+</html>
